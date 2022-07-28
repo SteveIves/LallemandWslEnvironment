@@ -1,8 +1,16 @@
 #!/bin/bash
 
-pidof synd > /dev/null 2>&1
+RESULT=`ps -ef | grep " synd" | grep -v grep`
 
-if [ $? -eq 0 ]
+if [[ -n "$RESULT" ]]
 then
-  synd -q 1> /dev/null
+  if [[ "$1" != "quiet" ]]
+  then
+    echo "Stopping Synergy License Manager"
+    synd -q
+  else
+    synd -q > /dev/null
+  fi
+else
+  if [[ "$1" != "quiet" ]]; then echo "Synergy License Manager is not running!"; fi
 fi

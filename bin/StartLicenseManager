@@ -1,12 +1,5 @@
 #!/bin/bash
 
-pidof synd > /dev/null 2>&1
-
-if [ $? -ne 0 ]
-then
-  synd 1> /dev/null 2>&1
-fi
-
 RESULT=`ps -ef | grep " synd" | grep -v grep`
 
 if [[ -z "$RESULT" ]]
