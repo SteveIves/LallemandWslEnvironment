@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Main development environment locations
-SolutionDir=//mnt/c/LALLEMAND/Unix
-LinuxRoot="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+export SolutionDir=//mnt/c/LALLEMAND/Unix
+export LinuxRoot="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 cd $LinuxRoot
 
