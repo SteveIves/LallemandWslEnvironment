@@ -1,5 +1,4 @@
 #!/bin/bash
-source /synergy/ConfigureSynergy
-/synergy/StartLicenseManager quiet
-/synergy/StartXfpl quiet
+$LinuxRoot/bin/StartLicenseManager quiet
+$LinuxRoot/bin/StartXfpl quiet
 

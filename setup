@@ -4,6 +4,10 @@
 export SolutionDir=//mnt/c/LALLEMAND/Unix
 export LinuxRoot="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# Define the version of Synergy to use. This is essentially the name of the
+# subdirectory below /synergy where the setsde script to call is located.
+export SDE_VERSION=1211_3278
+
 # Put us in our main development folder
 cd $LinuxRoot
 

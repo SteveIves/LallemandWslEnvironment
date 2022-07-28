@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source /synergy/ConfigureSynergy
-
 RESULT=`ps -ef | grep "rsynd -w -p 2356" | grep -v grep`
 
 if [[ -n "$RESULT" ]]

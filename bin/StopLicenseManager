@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source /synergy/ConfigureSynergy
-
 pidof synd > /dev/null 2>&1
 
 if [ $? -eq 0 ]

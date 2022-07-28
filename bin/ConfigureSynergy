@@ -5,7 +5,7 @@
 # -rw-rw-r-- for files
 umask 002
 
-source /synergy/1211_3278/setsde
+source /synergy/$SDE_VERSION/setsde
 
 export TERM=vt100
 
