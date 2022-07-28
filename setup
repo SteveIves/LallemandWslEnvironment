@@ -4,7 +4,11 @@
 export SolutionDir=//mnt/c/LALLEMAND/Unix
 export LinuxRoot="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# Put us in our main development folder
 cd $LinuxRoot
+
+# Add our bin folder to $PATH
+export PATH=$LinuxRoot/bin:$PATH
 
 #Linux environment settings
 export PS1='$(pwd)\$ '
@@ -42,17 +46,15 @@ export OSI=$LinuxRoot/osi
 
 # xfServerPlus environment variables
 export XFPL_SMCPATH=$SolutionDir/mdu
+export XFPL_INIPATH=$LinuxRoot
 
 # SQL Replicator environment variables
 export REPLICATOR_CONFIG_DIR=$SolutionDir/
 export REPLICATOR_INCLUDE=$SolutionDir/SRC/LIBRARY
 
-# Command aliases
+# Define command aliases
 alias dir='ls -Alh'
 alias rps='dbr RPS:rps'
 alias mdu='dbr DBLDIR:mdu'
 alias isload='dbr DBLDIR:isload'
 alias status='dbr DBLDIR:status'
-alias debug='$LinuxRoot/bin/debug'
-alias vsdebug='$LinuxRoot/bin/vsdebug'
-
