@@ -4,12 +4,12 @@ RESULT=`ps -ef | grep " synd" | grep -v grep`
 
 if [[ -z "$RESULT" ]]
 then
-  if [[ "$1" != "quiet" ]]
+  if [[ "$1" == "quiet" ]]
   then
+    synd > /dev/null 2>&1
+  else
     echo "Starting Synergy License Manager"
     synd
-  else
-    synd > /dev/null
   fi
 else
   if [[ "$1" != "quiet" ]]; then echo "Synergy License Manager is already running"; fi
