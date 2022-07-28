@@ -1,0 +1,30 @@
+#!/bin/bash
+
+P1=$1
+P1=${P1^^}
+P2=$2
+P2=${P2^^}
+
+if [[ "$P1" == "START" ]]; then
+
+  if [[ -z "$P2" ]]
+  then
+    echo "Specify program to debug as P2"
+  elif [[ ! -e $DBR/$P2.DBR ]]
+  then
+    echo "File not found: DBR:$P2.DBR"
+  else
+    echo "Starting DBR:$2.DBR in linux debug mode"
+    echo "Use 'debug attach' in another session to attach"
+    dbr -rd 4444:30 $DBR/$P2.DBR
+  fi
+
+elif [[ "$P1" == "ATTACH" ]]
+then
+  echo "Attaching to the debugger"
+  telnet localhost 4444
+else
+  echo "Usage: debug START <program>"
+  echo "       debug ATTACH"
+fi
+

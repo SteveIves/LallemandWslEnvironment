@@ -1,0 +1,21 @@
+#!/bin/bash
+
+P1=$1
+P1=${P1^^}
+
+echo ""
+
+if [[ -z "$P1" ]]
+then
+  echo "Usage: vsdebug <program>"
+elif [[ ! -e $DBR/$P1.DBR ]]
+then
+  echo "ERROR: DBR:$P1.DBR was not found!"
+else
+  echo "Starting DBR:$1.DBR in visual studio debug mode"
+  echo "Use 'Debug > Attach to process' to attach"
+  dbr -dv -rd 4444:30 $DBR/$P1.DBR
+fi
+
+echo ""
+

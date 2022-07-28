@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Main development environment locations
+SolutionDir=//mnt/c/LALLEMAND/Unix
+LinuxRoot="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+cd $LinuxRoot
+
+#Linux environment settings
+export PS1='$(pwd)\$ '
+export TERM=vt100
+
+# Repository environment variables
+export RPSDAT=$SolutionDir/rps/rpsdat
+export RPSMFIL=$RPSDAT/rpsmain.ism
+export RPSTFIL=$RPSDAT/rpstext.ism
+export RPS_DONT_COMPARE_SEGS=1
+
+# Unix development environment variables
+#export SYNCMPOPT=-W3 -qdefine=VS_BUILD -qalign -T
+export DBF=$SolutionDir/dbf
+export DBL=$SolutionDir/dbl
+export DEF=$SolutionDir/dbf
+export PTR=$SolutionDir/ptr
+export RPSSRC=$SolutionDir/rps
+export SCR=$SolutionDir/scr
+export UT=$SolutionDir/ut
+
+export A2D=$SolutionDir/a2d
+export D2A=$SolutionDir/a2d
+export UTILS=$SolutionDir/UTILS
+
+# Unix runtime environment variables
+export DBGSRC=$DBL
+export DBR=$SolutionDir/dbr
+export LOGNAME=WinUser
+export WBLIBR=$SolutionDir/wblibr
+
+# Data environment variables
+export DAT=$LinuxRoot/dat
+export OSI=$LinuxRoot/osi
+
+# xfServerPlus environment variables
+export XFPL_SMCPATH=$SolutionDir/mdu
+
+# SQL Replicator environment variables
+export REPLICATOR_CONFIG_DIR=$SolutionDir/
+export REPLICATOR_INCLUDE=$SolutionDir/SRC/LIBRARY
+
+# Command aliases
+alias dir='ls -Alh'
+alias rps='dbr RPS:rps'
+alias mdu='dbr DBLDIR:mdu'
+alias isload='dbr DBLDIR:isload'
+alias status='dbr DBLDIR:status'
+alias debug='$LinuxRoot/bin/debug'
+alias vsdebug='$LinuxRoot/bin/vsdebug'
+
